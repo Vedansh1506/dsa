@@ -1,8 +1,46 @@
 //{ Driver Code Starts
-// C program for insertion sort
-#include <stdio.h>
-#include <math.h>
+#include <bits/stdc++.h>
+using namespace std;
+void swap(int *xp, int *yp)
+{
+    int temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
 
+
+// } Driver Code Ends
+class Solution
+{
+    public:
+    int select(int arr[], int i,int n)
+    {
+        // code here such that selectionSort() sorts arr[]
+        int min =i;
+        for(int j=i;j<n;j++){
+            if(arr[j]<arr[min]){
+                min=j;
+            }
+        }
+        return min;
+    }
+     
+    void selectionSort(int arr[], int n)
+    {
+       //code here
+       for(int i=0;i<n;i++){
+           int min = select(arr,i,n);
+           
+            int temp = arr[min];
+            arr[min]=arr[i];
+            arr[i]=temp;
+       }
+  
+    }
+};
+
+//{ Driver Code Starts.
+ 
 /* Function to print an array */
 void printArray(int arr[], int size)
 {
@@ -11,53 +49,23 @@ void printArray(int arr[], int size)
         printf("%d ", arr[i]);
     printf("\n");
 }
-
-
-// } Driver Code Ends
-class Solution
-{
-    public:
-    void insert(int arr[], int i)
-    {
-        //code here
-        int j = i;
-    
-        while(j>0 && arr[j-1]>arr[j]){
-            int temp = arr[j-1];
-            arr[j-1]=arr[j];
-            arr[j]=temp;
-            j--;
-        }
-        
-    }
-     public:
-    //Function to sort the array using insertion sort algorithm.
-    void insertionSort(int arr[], int n)
-    {
-        //code here
-       
-        for(int i=0;i<=n-1;i++){
-            insert(arr,i);
-        }
-    }
-};
-
-//{ Driver Code Starts.
+ 
+// Driver program to test above functions
 int main()
 {
     int arr[1000],n,T,i;
-
+  
     scanf("%d",&T);
-
+    
     while(T--){
-
+        
     scanf("%d",&n);
-
+    
     for(i=0;i<n;i++)
       scanf("%d",&arr[i]);
-
-    Solution ob;
-    ob.insertionSort(arr, n);
+      
+    Solution ob;  
+    ob.selectionSort(arr, n);
     printArray(arr, n);
     }
     return 0;
