@@ -1,7 +1,9 @@
 //{ Driver Code Starts
-// C program for insertion sort
 #include <stdio.h>
-#include <math.h>
+#include <bits/stdc++.h>
+using namespace std;
+
+
 
 /* Function to print an array */
 void printArray(int arr[], int size)
@@ -17,50 +19,66 @@ void printArray(int arr[], int size)
 class Solution
 {
     public:
-    void insert(int arr[], int i)
+    void merge(int arr[], int l, int m, int r)
     {
-        //code here
-        int j = i;
-    
-        while(j>0 && arr[j-1]>arr[j]){
-            int temp = arr[j-1];
-            arr[j-1]=arr[j];
-            arr[j]=temp;
-            j--;
-        }
-        
+         // Your code here
+         vector<int>temp;
+         int left = l;
+         int right = m+1;
+         while(left<=m && right<=r){
+             if(arr[left]<=arr[right]){
+                temp.push_back(arr[left]);
+                left++;
+             }
+             else{
+                temp.push_back(arr[right]);
+                right++;
+             }
+         }
+         while(left<=m){
+            temp.push_back(arr[left]);
+            left++;
+         }
+         while(right<=r){
+            temp.push_back(arr[right]);
+            right++;
+         }
+         for(int i=l;i<=r;i++){
+             arr[i]=temp[i-l];
+         }
     }
-     public:
-    //Function to sort the array using insertion sort algorithm.
-    void insertionSort(int arr[], int n)
+    public:
+    void mergeSort(int arr[], int l, int r)
     {
         //code here
-       
-        for(int i=0;i<=n-1;i++){
-            insert(arr,i);
-        }
+        if(l>=r) return;
+        int m = (l+r)/2;
+        mergeSort(arr,l,m);
+        mergeSort(arr,m+1,r);
+        merge(arr,l,m,r);
     }
 };
 
 //{ Driver Code Starts.
+
+
 int main()
 {
-    int arr[1000],n,T,i;
+    int n,T,i;
 
     scanf("%d",&T);
 
     while(T--){
-
+    
     scanf("%d",&n);
-
+    int arr[n+1];
     for(i=0;i<n;i++)
       scanf("%d",&arr[i]);
 
     Solution ob;
-    ob.insertionSort(arr, n);
+    ob.mergeSort(arr, 0, n-1);
     printArray(arr, n);
     }
     return 0;
 }
-
 // } Driver Code Ends
