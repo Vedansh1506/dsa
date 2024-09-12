@@ -10,6 +10,7 @@ class Solution {
     void frequencyCount(vector<int>& arr, int N, int P) {
         // do modify in the given array
         
+        
         unordered_map<int,int>mpp;
         for(int i=0;i<N;i++){
             mpp[arr[i]]++;
