@@ -1,22 +1,48 @@
-class Solution {
-public:
-    void moveZeroes(vector<int>& nums) {
-        int j=-1;
-        int n = nums.size();
-        for(int i=0;i<n;i++){
-            if(nums[i]==0){
-                j=i;
-                break;
-            }
-        }
-        if(j==-1) return;
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
 
-        for(int i=j+1;i<n;i++){
-            if(nums[i]!=0){
-                swap(nums[i],nums[j]);
-                j++;
+
+// } Driver Code Ends
+class Solution {
+  public:
+    // Function to find element in sorted array
+    // arr: input array
+    // N: size of array
+    // K: element to be searched
+    int searchInSorted(int arr[], int N, int K) {
+
+        // Your code here
+        for(int i=0;i<N;i++){
+            if(arr[i]==K){
+                return true;
             }
         }
-        return;
+        return -1;
     }
 };
+
+//{ Driver Code Starts.
+
+int main(void) {
+
+    int t;
+    cin >> t;
+    while (t--) {
+        int n, k;
+        cin >> n >> k;
+
+        int arr[n];
+
+        for (int i = 0; i < n; i++) {
+            cin >> arr[i];
+        }
+
+        Solution ob;
+        cout << ob.searchInSorted(arr, n, k) << endl;
+    }
+
+    return 0;
+}
+
+// } Driver Code Ends
