@@ -17,6 +17,7 @@ public:
     }
 };
 
+
 // approach 2
 // #include<vector>
 
