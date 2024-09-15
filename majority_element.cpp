@@ -44,6 +44,5 @@ public:
             if(nums[i]==element) count1++;
         }
         if(count1 > (n/2)) return element;
-        return -1;
     }
 };
