@@ -33,7 +33,7 @@ public:
                 count=1;
                 element = nums[i];
             }
-            else if(element = nums[i]){
+            else if(element == nums[i]){
                 count++;
             }
             else count--;
@@ -44,5 +44,6 @@ public:
             if(nums[i]==element) count1++;
         }
         if(count1 > (n/2)) return element;
+        return -1;
     }
 };
