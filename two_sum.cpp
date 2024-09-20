@@ -24,3 +24,19 @@ public:
         return {-1,-1};
     }
 };
+
+// pair<int, int> twoSum(int n, vector<pair<int, int>> &arr, int target) {
+//     sort(arr.begin(), arr.end()); // Sort based on values, but preserve original indices
+//     int left = 0, right = n - 1;
+
+//     while (left < right) {
+//         int sum = arr[left].first + arr[right].first;
+//         if (sum == target) {
+//             return {arr[left].second, arr[right].second}; // Return the original indices
+//         }
+//         else if (sum < target) left++;
+//         else right--;
+//     }
+
+//     return {-1, -1}; // No pair found
+// }
