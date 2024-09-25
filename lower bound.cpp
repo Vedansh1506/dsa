@@ -24,3 +24,5 @@ int lowerBound(vector<int> arr, int n, int x) {
 	return ans;	
 
 }
+
+// search insert position is same as this
