@@ -13,3 +13,9 @@ public:
     return -1;
     }
 };
+
+// overflow case
+
+// INT_MAX 
+
+// mid = low + (high-low)/2  or take long long
