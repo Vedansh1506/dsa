@@ -27,4 +27,5 @@ int missingK(vector < int > vec, int n, int k) {
                      // missing = arr[high]-(high+1)
                      // ans = arr[high] + k - (arr[high] - (high+1))
                      // ans = k + high + 1
+                     // OR ans = low + k  as high + 1 = low
 }
