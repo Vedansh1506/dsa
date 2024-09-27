@@ -56,3 +56,5 @@ int aggressiveCows(vector<int> &stalls, int k)
     }
     return high;
 }
+
+// leetcode que Magnetic Force Between Two Balls
