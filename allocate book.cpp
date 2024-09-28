@@ -62,4 +62,7 @@ int findPages(vector<int>& arr, int n, int m) {
     return low;
 }
 
+
 // leetcode que - split array largest sum
+
+// book allocation , split array largest sum, painter's partition - all are same
